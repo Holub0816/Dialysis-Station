@@ -1,0 +1,218 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/med"
+    android:orientation="vertical"
+    tools:context=".InsertActivity">
+
+    <TextView
+        android:id="@+id/pesel"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="20dp"
+        android:fontFamily="@font/amaranth"
+        android:lineSpacingExtra="14sp"
+        android:hint="Proszę zbliżyć tag wcelu pobrania numeru PESEL."
+        android:textSize="13sp" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <EditText
+            android:id="@+id/uf"
+            android:layout_width="200dp"
+            android:layout_height="35dp"
+            android:layout_margin="10dp"
+            android:ems="10"
+            android:fontFamily="@font/amaranth"
+            android:hint="UF:"
+            android:inputType="text"
+            android:textSize="13sp" />
+
+        <ImageButton
+            android:id="@+id/ufButton"
+            style="@style/PrimaryColoredButton"
+            android:layout_width="94dp"
+            android:layout_height="40dp"
+            android:layout_margin="10dp"
+            android:background="@color/peach"
+            android:fontFamily="@font/amaranth"
+            android:onClick="getSpeechInput"
+            app:srcCompat="@android:drawable/ic_btn_speak_now" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <EditText
+            android:id="@+id/puls"
+            android:layout_width="200dp"
+            android:layout_height="35dp"
+            android:layout_margin="10dp"
+            android:ems="10"
+            android:fontFamily="@font/amaranth"
+            android:hint="Tętno:"
+            android:inputType="text"
+            android:textSize="13sp" />
+
+        <ImageButton
+            android:id="@+id/pulsButton"
+            style="@style/PrimaryColoredButton"
+            android:layout_width="94dp"
+            android:layout_height="40dp"
+            android:layout_margin="10dp"
+            android:background="@color/peach"
+            android:fontFamily="@font/amaranth"
+            android:onClick="getSpeechInput"
+            app:srcCompat="@android:drawable/ic_btn_speak_now" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <EditText
+            android:id="@+id/rr"
+            android:layout_width="200dp"
+            android:layout_height="35dp"
+            android:layout_margin="10dp"
+            android:ems="10"
+            android:fontFamily="@font/amaranth"
+            android:hint="RR:"
+            android:inputType="text"
+            android:textSize="13sp" />
+
+        <ImageButton
+            android:id="@+id/rrButton"
+            style="@style/PrimaryColoredButton"
+            android:layout_width="94dp"
+            android:layout_height="40dp"
+            android:layout_margin="10dp"
+            android:background="@color/peach"
+            android:fontFamily="@font/amaranth"
+            android:onClick="getSpeechInput"
+            app:srcCompat="@android:drawable/ic_btn_speak_now" />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <EditText
+            android:id="@+id/ct"
+            android:layout_width="200dp"
+            android:layout_height="35dp"
+            android:layout_margin="10dp"
+            android:ems="10"
+            android:fontFamily="@font/amaranth"
+            android:hint="Ciśnienie tętnicze:"
+            android:inputType="text"
+            android:textSize="13sp" />
+
+        <ImageButton
+            android:id="@+id/ctButton"
+            style="@style/PrimaryColoredButton"
+            android:layout_width="94dp"
+            android:layout_height="40dp"
+            android:layout_margin="10dp"
+            android:background="@color/peach"
+            android:fontFamily="@font/amaranth"
+            android:onClick="getSpeechInput"
+            app:srcCompat="@android:drawable/ic_btn_speak_now" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <EditText
+            android:id="@+id/cz"
+            android:layout_width="200dp"
+            android:layout_height="35dp"
+            android:layout_margin="10dp"
+            android:ems="10"
+            android:fontFamily="@font/amaranth"
+            android:hint="Ciśnienie żylne:"
+            android:inputType="text"
+            android:textSize="13sp" />
+
+        <ImageButton
+            android:id="@+id/czButton"
+            style="@style/PrimaryColoredButton"
+            android:layout_width="94dp"
+            android:layout_height="40dp"
+            android:layout_margin="10dp"
+            android:background="@color/peach"
+            android:fontFamily="@font/amaranth"
+            android:onClick="getSpeechInput"
+            app:srcCompat="@android:drawable/ic_btn_speak_now" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <EditText
+            android:id="@+id/tmp"
+            android:layout_width="200dp"
+            android:layout_height="35dp"
+            android:layout_margin="10dp"
+            android:ems="10"
+            android:fontFamily="@font/amaranth"
+            android:hint="TMP:"
+            android:inputType="text"
+            android:textSize="13sp" />
+
+        <ImageButton
+            android:id="@+id/tmpButton"
+            style="@style/PrimaryColoredButton"
+            android:layout_width="94dp"
+            android:layout_height="40dp"
+            android:layout_margin="10dp"
+            android:background="@color/peach"
+            android:fontFamily="@font/amaranth"
+            android:onClick="getSpeechInput"
+            app:srcCompat="@android:drawable/ic_btn_speak_now" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <Button
+            android:id="@+id/dodaj_dane_button"
+            style="@style/PrimaryColoredButton"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_margin="10dp"
+            android:background="@color/peach"
+            android:fontFamily="@font/amaranth"
+            android:text="Dodaj" />
+
+        <Button
+            android:id="@+id/powrot"
+            style="@style/PrimaryColoredButton"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_margin="10dp"
+            android:background="@color/peach"
+            android:fontFamily="@font/amaranth"
+            android:onClick="powrot"
+            android:text="Wróć do strony głównej" />
+    </LinearLayout>
+
+
+</LinearLayout>

@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<jnlp spec="1.0" xmlns:jfx="http://javafx.com" href="aplikacjaDializa.jnlp">
+  <information>
+    <title>aplikacjaDializa</title>
+    <vendor>Magda</vendor>
+    <description>null</description>
+    <offline-allowed/>
+  </information>
+  <resources>
+    <j2se version="1.6+" href="http://java.sun.com/products/autodl/j2se"/>
+    <jar href="aplikacjaDializa.jar" size="40505" download="eager" />
+    <jar href="lib\commons-beanutils-1.8.2.jar" size="231891" download="eager" />
+    <jar href="lib\commons-collections-3.2.1.jar" size="575389" download="eager" />
+    <jar href="lib\commons-dbcp2-2.6.0.jar" size="205318" download="eager" />
+    <jar href="lib\commons-digester-1.7.jar" size="139966" download="eager" />
+    <jar href="lib\commons-logging-1.1.jar" size="52915" download="eager" />
+    <jar href="lib\commons-logging-1.2.jar" size="61829" download="eager" />
+    <jar href="lib\commons-pool2-2.6.1.jar" size="130324" download="eager" />
+    <jar href="lib\controlsfx-8.0.5.jar" size="754696" download="eager" />
+    <jar href="lib\iText-2.1.7.jar" size="1130070" download="eager" />
+    <jar href="lib\jasperreports-4.5.0.jar" size="3390915" download="eager" />
+    <jar href="lib\log4j-1.2.15.jar" size="391834" download="eager" />
+    <jar href="lib\mysql-connector-java-8.0.15.jar" size="2134905" download="eager" />
+    <jar href="lib\poi-3.6.jar" size="1539291" download="eager" />
+  </resources>
+  <applet-desc  width="800" height="600" main-class="com.javafx.main.NoJavaFXFallback"  name="aplikacjaDializa" >
+    <param name="requiredFXVersion" value="8.0+"/>
+  </applet-desc>
+  <jfx:javafx-desc  width="800" height="600" main-class="aplikacjadializa.AplikacjaDializa"  name="aplikacjaDializa" />
+  <update check="always"/>
+</jnlp>

@@ -1,0 +1,480 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ChoiceBox?>
+<?import javafx.scene.control.DatePicker?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.RadioButton?>
+<?import javafx.scene.control.Spinner?>
+<?import javafx.scene.control.Tab?>
+<?import javafx.scene.control.TabPane?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.control.ToggleGroup?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="636.0" prefWidth="1231.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="aplikacjadializa.FXMLDocumentController">
+   <center>
+      <TabPane prefHeight="200.0" prefWidth="200.0" tabClosingPolicy="UNAVAILABLE" BorderPane.alignment="CENTER">
+        <tabs>
+          <Tab text="Wyszukaj pacjenta">
+            <content>
+              <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="529.0" prefWidth="797.0">
+                     <children>
+                        <Text layoutX="37.0" layoutY="32.0" strokeType="OUTSIDE" strokeWidth="0.0" text="PESEL">
+                           <font>
+                              <Font size="16.0" />
+                           </font></Text>
+                        <Button layoutX="307.0" layoutY="11.0" mnemonicParsing="false" onAction="#szukajPacjenta" prefHeight="32.0" prefWidth="73.0" text="Szukaj">
+                           <font>
+                              <Font size="16.0" />
+                           </font></Button>
+                        <DatePicker fx:id="datePicker" layoutX="222.0" layoutY="120.0" promptText="Wybierz datę dializy" />
+                        <Button fx:id="clear" layoutX="411.0" layoutY="11.0" mnemonicParsing="false" onAction="#clearTextAreasInSearching" prefHeight="32.0" prefWidth="95.0" text="Wyczyść">
+                           <font>
+                              <Font size="16.0" />
+                           </font></Button>
+                        <RadioButton fx:id="searchingDaneDializCheckBox" layoutX="36.0" layoutY="56.0" mnemonicParsing="false" onAction="#changeDatePickerStatus3" prefHeight="30.0" prefWidth="197.0" selected="true" text="Dane wszystkich dializ">
+                           <toggleGroup>
+                              <ToggleGroup fx:id="daneDializButtons" />
+                           </toggleGroup>
+                           <font>
+                              <Font size="16.0" />
+                           </font>
+                        </RadioButton>
+                        <RadioButton fx:id="searchingDaneOstatniejDializyCheckBox" layoutX="37.0" layoutY="86.0" mnemonicParsing="false" onAction="#changeDatePickerStatus3" prefHeight="30.0" prefWidth="185.0" text="Dane ostatniej dializy" toggleGroup="$daneDializButtons">
+                           <font>
+                              <Font size="16.0" />
+                           </font></RadioButton>
+                        <RadioButton fx:id="searchingDaneDializyDataCheckBox" layoutX="37.0" layoutY="116.0" mnemonicParsing="false" onAction="#changeDatePickerStatus2" prefHeight="30.0" prefWidth="163.0" text="Dane dializy z dnia" toggleGroup="$daneDializButtons">
+                           <font>
+                              <Font size="16.0" />
+                           </font></RadioButton>
+                        <Button layoutX="530.0" layoutY="11.0" mnemonicParsing="false" onAction="#searchingHelp" prefHeight="32.0" prefWidth="87.0" text="Pomoc">
+                           <font>
+                              <Font size="16.0" />
+                           </font></Button>
+                        <Label fx:id="label2" layoutX="243.0" layoutY="14.0" text="Label">
+                           <font>
+                              <Font size="16.0" />
+                           </font></Label>
+                        <TextField fx:id="peselForSearching" layoutX="88.0" layoutY="15.0" />
+                        <TableView fx:id="tabelaDializ" layoutX="35.0" layoutY="281.0" prefHeight="200.0" prefWidth="1174.0" tableMenuButtonVisible="true">
+                          <columns>
+                            <TableColumn fx:id="dataDializyTableColumn" prefWidth="75.0" text="Data" />
+                              <TableColumn fx:id="rodzajTableColumn" prefWidth="75.0" text="Rodzaj" />
+                            <TableColumn fx:id="wagaPacjentaTableColumn" prefWidth="60.000030517578125" text="Waga" />
+                              <TableColumn fx:id="CaTableColumn" prefWidth="48.666717529296875" text="Ca" />
+                              <TableColumn fx:id="KTableColumn" minWidth="0.0" prefWidth="51.33331298828125" text="K" />
+                              <TableColumn fx:id="NaTableColumn" prefWidth="51.3333740234375" text="Na" />
+                              <TableColumn fx:id="glukozaTableColumn" prefWidth="78.0" text="Glukoza" />
+                              <TableColumn fx:id="epoTableColum" prefWidth="61.99993896484375" text="EPO" />
+                              <TableColumn fx:id="feTableColum" prefWidth="58.66656494140625" text="Fe" />
+                              <TableColumn fx:id="rodzajDializatoraTableColum" prefWidth="131.99993896484375" text="Dializator" />
+                              <TableColumn fx:id="numerStanowiskaTableColumn" prefWidth="136.00006103515625" text="Numer stanowiska" />
+                              <TableColumn fx:id="numerAparatuTableColumn" prefWidth="111.33331298828125" text="Numer aparatu" />
+                              <TableColumn fx:id="koncentratTableColumn" prefWidth="75.0" text="Koncentrat" />
+                              <TableColumn fx:id="ultrafiltracjaTableColumn" prefWidth="75.0" text="Ultrafiltracja" />
+                              <TableColumn fx:id="czasTableColumn" prefWidth="75.0" text="Czas" />
+                          </columns>
+                        </TableView>
+                        <TableView fx:id="tabelaPacjenta" layoutX="37.0" layoutY="184.0" prefHeight="69.0" prefWidth="1161.0" tableMenuButtonVisible="true">
+                          <columns>
+                            <TableColumn fx:id="imietableColum" prefWidth="91.33333969116211" text="Imię" />
+                              <TableColumn fx:id="nazwiskoTableColum" prefWidth="88.0" text="Nazwisko" />
+                              <TableColumn fx:id="tel1tableColum" prefWidth="88.00001525878906" text="Telefon" />
+                              <TableColumn fx:id="tel2TableColum" prefWidth="127.33331298828125" text="Telefon dod." />
+                              <TableColumn fx:id="dniDializytableColum" prefWidth="130.66665649414062" text="Dni dializy" />
+                              <TableColumn fx:id="zmianaTableColum" prefWidth="86.00006103515625" text="Zmiana" />
+                              <TableColumn fx:id="rodzajDosteputableColum" prefWidth="160.666748046875" text="Rodzaj dostepu" />
+                              <TableColumn fx:id="miejsceWkluciaTableColum" prefWidth="112.6666259765625" text="Miejsce wkłucia" />
+                          </columns>
+                        </TableView>
+                     </children></AnchorPane>
+            </content>
+          </Tab>
+            <Tab text="Dodaj dializę">
+              <content>
+                <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                     <children>
+                        <Text layoutX="39.0" layoutY="53.0" strokeType="OUTSIDE" strokeWidth="0.0" text="PESEL">
+                           <font>
+                              <Font size="16.0" />
+                           </font></Text>
+                        <TextField fx:id="dodajDializePesel" layoutX="90.0" layoutY="37.0" prefHeight="23.0" prefWidth="140.0" />
+                        <TextField fx:id="numerHemodializy" editable="false" layoutX="489.0" layoutY="34.0" prefHeight="23.0" prefWidth="78.0" />
+                        <TextField fx:id="dodajDializeNumerStanowiska" layoutX="718.0" layoutY="34.0" prefHeight="23.0" prefWidth="70.0" />
+                        <TextField fx:id="dodajDializeNumerAparatu" layoutX="906.0" layoutY="34.0" prefHeight="23.0" prefWidth="100.0" />
+                        <Spinner fx:id="suchaWaga" editable="true" layoutX="191.0" layoutY="195.0" />
+                        <Spinner fx:id="potas" editable="true" layoutX="190.0" layoutY="226.0">
+                           <opaqueInsets>
+                              <Insets />
+                           </opaqueInsets></Spinner>
+                        <Spinner fx:id="wapn" editable="true" layoutX="190.0" layoutY="262.0" prefHeight="9.0" prefWidth="145.0">
+                           <opaqueInsets>
+                              <Insets />
+                           </opaqueInsets></Spinner>
+                        <Spinner fx:id="sod" editable="true" layoutX="190.0" layoutY="300.0">
+                           <opaqueInsets>
+                              <Insets />
+                           </opaqueInsets></Spinner>
+                        <Spinner fx:id="glukoza" editable="true" layoutX="190.0" layoutY="329.0">
+                           <opaqueInsets>
+                              <Insets top="50.0" />
+                           </opaqueInsets></Spinner>
+                        <Spinner fx:id="epo" editable="true" layoutX="190.0" layoutY="358.0">
+                           <opaqueInsets>
+                              <Insets top="50.0" />
+                           </opaqueInsets></Spinner>
+                        <Spinner fx:id="fe" editable="true" layoutX="190.0" layoutY="388.0" />
+                        <Spinner fx:id="numerKoncentratu" editable="true" layoutX="190.0" layoutY="418.0" />
+                        <TextField fx:id="konduktywnosc" layoutX="190.0" layoutY="445.0" />
+                        <TextField fx:id="przeplyw" layoutX="190.0" layoutY="474.0" />
+                        <TextField fx:id="temperatura" layoutX="190.0" layoutY="501.0" />
+                        <Pane layoutX="374.0" layoutY="185.0" prefHeight="260.0" prefWidth="243.0">
+                           <children>
+                              <Text layoutX="9.0" layoutY="20.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Antykoagulacja">
+                                 <font>
+                                    <Font size="16.0" />
+                                 </font></Text>
+                              <Text layoutX="2.0" layoutY="46.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Heparyna">
+                                 <font>
+                                    <Font size="16.0" />
+                                 </font></Text>
+                              <Spinner fx:id="bolusSpinner" editable="true" layoutX="70.0" layoutY="52.0" />
+                              <Spinner fx:id="pompaSpinner" editable="true" layoutX="70.0" layoutY="82.0" />
+                              <TextField fx:id="heparynaStopHH" layoutX="70.0" layoutY="115.0" prefHeight="23.0" prefWidth="42.0" promptText="HH">
+                                 <font>
+                                    <Font size="16.0" />
+                                 </font></TextField>
+                              <Text layoutX="120.0" layoutY="135.0" strokeType="OUTSIDE" strokeWidth="0.0" text=":" />
+                              <TextField fx:id="heparynaStopMM" layoutX="136.0" layoutY="111.0" prefHeight="23.0" prefWidth="45.0" promptText="mm">
+                                 <font>
+                                    <Font size="16.0" />
+                                 </font></TextField>
+                              <Text layoutX="4.0" layoutY="70.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Bolus">
+                                 <font>
+                                    <Font size="16.0" />
+                                 </font></Text>
+                              <Text layoutX="2.0" layoutY="100.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Pompa">
+                                 <font>
+                                    <Font size="16.0" />
+                                 </font></Text>
+                              <Text layoutX="8.0" layoutY="134.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Stop">
+                                 <font>
+                                    <Font size="16.0" />
+                                 </font></Text>
+                              <Text layoutX="6.0" layoutY="163.0" strokeType="OUTSIDE" strokeWidth="0.0" text="CLEXANE" wrappingWidth="71.013671875">
+                                 <font>
+                                    <Font size="16.0" />
+                                 </font></Text>
+                              <Spinner fx:id="dawkaSpinner" editable="true" layoutX="64.0" layoutY="168.0" />
+                              <Text layoutX="1.0" layoutY="186.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Dawka">
+                                 <font>
+                                    <Font size="16.0" />
+                                 </font></Text>
+                           </children>
+                        </Pane>
+                        <TextField fx:id="opisPrzed" alignment="TOP_LEFT" layoutX="633.0" layoutY="146.0" prefHeight="79.0" prefWidth="513.0" />
+                        <TextField fx:id="ultrafiltracja" layoutX="867.0" layoutY="251.0" prefHeight="23.0" prefWidth="74.0" />
+                        <TextField fx:id="czasHH" layoutX="1015.0" layoutY="251.0" prefHeight="23.0" prefWidth="35.0" promptText="HH" />
+                        <TextField fx:id="czasMM" layoutX="1072.0" layoutY="252.0" prefHeight="23.0" prefWidth="40.0" promptText="mm" />
+                        <Button layoutX="460.0" layoutY="551.0" mnemonicParsing="false" onAction="#podpowiedzDaneDializy" text="Podpowiedz">
+                           <font>
+                              <Font size="16.0" />
+                           </font></Button>
+                        <RadioButton fx:id="dataDializyDzis" layoutX="39.0" layoutY="92.0" mnemonicParsing="false" onAction="#changeDatePickerStatus" selected="true" text="Dzisiaj">
+                           <toggleGroup>
+                              <ToggleGroup fx:id="dataDodawanejDializy" />
+                           </toggleGroup>
+                           <font>
+                              <Font size="16.0" />
+                           </font>
+                        </RadioButton>
+                        <RadioButton fx:id="dataDializyInna" layoutX="143.0" layoutY="92.0" mnemonicParsing="false" onAction="#changeDatePickerStatus" text="Inna data" toggleGroup="$dataDodawanejDializy">
+                           <font>
+                              <Font size="16.0" />
+                           </font></RadioButton>
+                        <DatePicker fx:id="dodajDializeDatePicker" layoutX="258.0" layoutY="95.0" promptText="Wybierz datę dializy" />
+                        <Text layoutX="31.0" layoutY="212.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Sucha waga">
+                           <font>
+                              <Font size="16.0" />
+                           </font></Text>
+                        <Button layoutX="593.0" layoutY="551.0" mnemonicParsing="false" onAction="#dodajDialize" text="Dodaj">
+                           <font>
+                              <Font size="16.0" />
+                           </font></Button>
+                        <Text layoutX="30.0" layoutY="243.0" strokeType="OUTSIDE" strokeWidth="0.0" text="K +">
+                           <font>
+                              <Font size="16.0" />
+                           </font></Text>
+                        <Text layoutX="30.0" layoutY="281.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Ca 2+">
+                           <font>
+                              <Font size="16.0" />
+                           </font></Text>
+                        <Text layoutX="30.0" layoutY="317.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Na +">
+                           <font>
+                              <Font size="16.0" />
+                           </font></Text>
+                        <ChoiceBox fx:id="dodajDializeRodzajDializatora" layoutX="781.0" layoutY="294.0" onDragDetected="#sprawdzRodzajDializatora" onMouseExited="#sprawdzRodzajDializatora" />
+                        <Text layoutX="633.0" layoutY="309.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Rodzaj dializatora">
+                           <font>
+                              <Font size="16.0" />
+                           </font></Text>
+                        <Button layoutX="364.0" layoutY="551.0" mnemonicParsing="false" onAction="#addDialysisHelp" text="Pomoc">
+                           <font>
+                              <Font size="16.0" />
+                           </font></Button>
+                        <Label fx:id="label" layoutX="249.0" layoutY="38.0" prefHeight="21.0" prefWidth="77.0" text="Label">
+                           <font>
+                              <Font size="16.0" />
+                           </font></Label>
+                        <Text layoutX="631.0" layoutY="140.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Ocena lekarza przed hemodializą">
+                           <font>
+                              <Font size="16.0" />
+                           </font></Text>
+                        <Text layoutX="30.0" layoutY="345.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Glukoza">
+                           <font>
+                              <Font size="16.0" />
+                           </font></Text>
+                        <Text layoutX="30.0" layoutY="375.0" strokeType="OUTSIDE" strokeWidth="0.0" text="EPO">
+                           <font>
+                              <Font size="16.0" />
+                           </font></Text>
+                        <Text layoutX="30.0" layoutY="405.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Fe">
+                           <font>
+                              <Font size="16.0" />
+                           </font></Text>
+                        <Text layoutX="30.0" layoutY="435.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Numer koncentratu">
+                           <font>
+                              <Font size="16.0" />
+                           </font></Text>
+                        <Text layoutX="343.0" layoutY="53.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Numer hemodializy">
+                           <font>
+                              <Font size="16.0" />
+                           </font></Text>
+                        <Text layoutX="614.0" layoutY="53.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Nr stanowiska">
+                           <font>
+                              <Font size="16.0" />
+                           </font></Text>
+                        <Text layoutX="813.0" layoutY="52.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Nr aparatu">
+                           <font>
+                              <Font size="16.0" />
+                           </font></Text>
+                        <Pane fx:id="paneInnyDializator" layoutX="631.0" layoutY="339.0" prefHeight="83.0" prefWidth="285.0">
+                           <children>
+                              <Text layoutY="19.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Opis dializatora">
+                                 <font>
+                                    <Font size="16.0" />
+                                 </font></Text>
+                              <TextField fx:id="opisInnegoDializatora" layoutY="21.0" prefHeight="42.0" prefWidth="245.0" />
+                           </children>
+                        </Pane>
+                        <Text layoutX="633.0" layoutY="266.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Rodzaj dializy">
+                           <font>
+                              <Font size="16.0" />
+                           </font></Text>
+                        <ChoiceBox fx:id="rodzajDializyChoiceBox" layoutX="781.0" layoutY="252.0" />
+                        <Text layoutX="844.0" layoutY="268.0" strokeType="OUTSIDE" strokeWidth="0.0" text="UF">
+                           <font>
+                              <Font size="16.0" />
+                           </font></Text>
+                        <Text layoutX="981.0" layoutY="268.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Czas">
+                           <font>
+                              <Font size="16.0" />
+                           </font></Text>
+                        <Text layoutX="1060.0" layoutY="268.0" strokeType="OUTSIDE" strokeWidth="0.0" text=":" wrappingWidth="11.9349365234375" />
+                        <Text layoutX="30.0" layoutY="462.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Konduktywność">
+                           <font>
+                              <Font size="16.0" />
+                           </font></Text>
+                        <Text layoutX="30.0" layoutY="490.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Przepływ dializatu">
+                           <font>
+                              <Font size="16.0" />
+                           </font></Text>
+                        <Text layoutX="30.0" layoutY="518.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Temperatura dializatu">
+                           <font>
+                              <Font size="16.0" />
+                           </font></Text>
+                     </children>
+                  </AnchorPane>
+              </content>
+            </Tab>
+          <Tab text="Dodaj pacjenta">
+            <content>
+              <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="505.0" prefWidth="677.0">
+                     <children>
+                        <Button fx:id="dodajPacjentaBTN" layoutX="365.0" layoutY="470.0" mnemonicParsing="false" onAction="#dodajPacjenta" text="Dodaj">
+                           <font>
+                              <Font size="16.0" />
+                           </font></Button>
+                        <Button layoutX="263.0" layoutY="470.0" mnemonicParsing="false" onAction="#addPatientHelp" text="Pomoc">
+                           <font>
+                              <Font size="16.0" />
+                           </font></Button>
+                        <Pane layoutX="396.0" layoutY="190.0" prefHeight="227.0" prefWidth="251.0">
+                           <children>
+                              <ChoiceBox fx:id="dniDializyCHBox" layoutX="179.0" layoutY="38.0" />
+                              <ChoiceBox fx:id="miejsceWkluciaCHBox" layoutX="179.0" layoutY="182.0" />
+                              <ChoiceBox fx:id="rodzajDostepuCHBox" layoutX="179.0" layoutY="126.0" />
+                              <ChoiceBox fx:id="zmianaCHBox" layoutX="179.0" layoutY="76.0" />
+                              <Text layoutX="1.0" layoutY="19.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Parametry dializ">
+                                 <font>
+                                    <Font size="16.0" />
+                                 </font></Text>
+                              <Text layoutX="3.0" layoutY="55.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Dni dializy">
+                                 <font>
+                                    <Font size="16.0" />
+                                 </font></Text>
+                              <Text layoutX="3.0" layoutY="93.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Zmiana">
+                                 <font>
+                                    <Font size="16.0" />
+                                 </font></Text>
+                              <Text layoutX="3.0" layoutY="142.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Rodzaj dostępu" wrappingWidth="122.59379577636719">
+                                 <font>
+                                    <Font size="16.0" />
+                                 </font></Text>
+                              <Text layoutX="3.0" layoutY="198.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Miejsce wkłucia" wrappingWidth="121.87115478515625">
+                                 <font>
+                                    <Font size="16.0" />
+                                 </font></Text>
+                           </children>
+                        </Pane>
+                        <Pane layoutX="62.0" layoutY="24.0" prefHeight="143.0" prefWidth="586.0">
+                           <children>
+                              <TextField fx:id="peselTXT" layoutX="55.0" layoutY="22.0">
+                                 <font>
+                                    <Font size="16.0" />
+                                 </font></TextField>
+                              <Text layoutX="6.0" layoutY="41.0" strokeType="OUTSIDE" strokeWidth="0.0" text="PESEL">
+                                 <font>
+                                    <Font size="16.0" />
+                                 </font></Text>
+                              <Text layoutX="302.0" layoutY="100.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Nazwisko">
+                                 <font>
+                                    <Font size="16.0" />
+                                 </font></Text>
+                              <TextField fx:id="imieTXT" layoutX="378.0" layoutY="31.0">
+                                 <font>
+                                    <Font size="16.0" />
+                                 </font></TextField>
+                              <TextField fx:id="nazwiskoTXT" layoutX="378.0" layoutY="77.0">
+                                 <font>
+                                    <Font size="16.0" />
+                                 </font></TextField>
+                              <Text layoutX="15.0" layoutY="18.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Dane osobowe">
+                                 <font>
+                                    <Font size="16.0" />
+                                 </font></Text>
+                              <Label fx:id="label3" layoutX="256.0" layoutY="24.0" prefHeight="28.0" prefWidth="37.0" text="Label">
+                                 <font>
+                                    <Font size="16.0" />
+                                 </font></Label>
+                              <Text layoutX="320.0" layoutY="45.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Imię">
+                                 <font>
+                                    <Font size="16.0" />
+                                 </font></Text>
+                           </children>
+                        </Pane>
+                        <Pane layoutX="46.0" layoutY="190.0" prefHeight="113.0" prefWidth="319.0">
+                           <children>
+                              <Text layoutX="21.0" layoutY="44.0" strokeType="OUTSIDE" strokeWidth="0.0" text="telefon1">
+                                 <font>
+                                    <Font size="16.0" />
+                                 </font></Text>
+                              <Text layoutX="21.0" layoutY="91.0" strokeType="OUTSIDE" strokeWidth="0.0" text="telefon2">
+                                 <font>
+                                    <Font size="16.0" />
+                                 </font></Text>
+                              <TextField fx:id="telefon1TXT" layoutX="107.0" layoutY="26.0">
+                                 <font>
+                                    <Font size="16.0" />
+                                 </font></TextField>
+                              <TextField fx:id="telefon2TXT" layoutX="107.0" layoutY="74.0">
+                                 <font>
+                                    <Font size="16.0" />
+                                 </font></TextField>
+                              <Text layoutX="21.0" layoutY="19.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Dane kontaktowe">
+                                 <font>
+                                    <Font size="16.0" />
+                                 </font></Text>
+                           </children>
+                        </Pane>
+                     </children>
+                  </AnchorPane>
+            </content>
+          </Tab>
+            <Tab text="Zakończ dializę">
+              <content>
+                <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                     <children>
+                        <Text layoutX="14.0" layoutY="63.0" strokeType="OUTSIDE" strokeWidth="0.0" text="PESEL">
+                           <font>
+                              <Font size="16.0" />
+                           </font></Text>
+                        <TextField fx:id="endPESEL" layoutX="89.0" layoutY="44.0" />
+                        <Label fx:id="label4" layoutX="257.0" layoutY="45.0" text="Label">
+                           <font>
+                              <Font size="16.0" />
+                           </font></Label>
+                        <Button layoutX="293.0" layoutY="564.0" mnemonicParsing="false" onAction="#zakonczDialize" text="Zakończ">
+                           <font>
+                              <Font size="16.0" />
+                           </font></Button>
+                        <TextField fx:id="opisPoPielegniarka" alignment="TOP_LEFT" layoutX="29.0" layoutY="112.0" prefHeight="240.0" prefWidth="399.0">
+                           <font>
+                              <Font size="18.0" />
+                           </font></TextField>
+                        <Text layoutX="87.0" layoutY="102.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Ocena pięlęgniarska po zakończeniu HD">
+                           <font>
+                              <Font size="16.0" />
+                           </font></Text>
+                        <TextField fx:id="opisPoLekarz" alignment="TOP_LEFT" layoutX="523.0" layoutY="111.0" prefHeight="242.0" prefWidth="421.0">
+                           <font>
+                              <Font size="18.0" />
+                           </font></TextField>
+                        <Text layoutX="644.0" layoutY="101.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Ocena lekarza po zakonczeniu HD">
+                           <font>
+                              <Font size="16.0" />
+                           </font></Text>
+                        <Text layoutX="28.0" layoutY="385.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Waga" wrappingWidth="53.15298080444336">
+                           <font>
+                              <Font size="16.0" />
+                           </font></Text>
+                        <Text layoutX="25.0" layoutY="420.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Całkowita objętość krwi" wrappingWidth="77.5240707397461">
+                           <font>
+                              <Font size="16.0" />
+                           </font></Text>
+                        <TextField fx:id="wagaPo" layoutX="112.0" layoutY="368.0" />
+                        <TextField fx:id="objetoscKrwiPo" layoutX="112.0" layoutY="423.0" />
+                        <Text layoutX="294.0" layoutY="387.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Objętość substytucjii">
+                           <font>
+                              <Font size="16.0" />
+                           </font></Text>
+                        <TextField fx:id="objetoscSubstytucji" layoutX="467.0" layoutY="368.0" />
+                        <Text layoutX="298.0" layoutY="429.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Godzina zakończenia">
+                           <font>
+                              <Font size="16.0" />
+                           </font></Text>
+                        <Text layoutX="505.0" layoutY="428.0" strokeType="OUTSIDE" strokeWidth="0.0" text=":" />
+                        <TextField fx:id="zakonczenieHH" layoutX="461.0" layoutY="412.0" prefHeight="23.0" prefWidth="35.0" />
+                        <TextField fx:id="zakonczenieMM" layoutX="520.0" layoutY="410.0" prefHeight="23.0" prefWidth="37.0" />
+                        <TextField fx:id="stanCewnika" alignment="TOP_LEFT" layoutX="25.0" layoutY="499.0" prefHeight="53.0" prefWidth="514.0" />
+                        <Text layoutX="25.0" layoutY="493.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Stan cewnika" wrappingWidth="231.54953002929688">
+                           <font>
+                              <Font size="16.0" />
+                           </font></Text>
+                     </children>
+                  </AnchorPane>
+              </content>
+            </Tab>
+        </tabs>
+      </TabPane>
+   </center>
+</BorderPane>

@@ -1,0 +1,149 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/med"
+    android:orientation="vertical"
+    tools:context=".MainActivity">
+
+    <TextView
+        android:id="@+id/textView3"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="10dp"
+        android:fontFamily="@font/amaranth"
+        android:text="Wprowadz informacje o pacjencie i miejscu dializy:" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:orientation="horizontal">
+
+        <EditText
+            android:id="@+id/edit_message"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_margin="2dp"
+            android:layout_weight="1"
+            android:ems="10"
+
+            android:fontFamily="@font/amaranth"
+            android:hint="Nazwa stacji:"
+            android:inputType="text" />
+
+        <EditText
+            android:id="@+id/edit_message2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="2dp"
+            android:layout_weight="1"
+            android:ems="10"
+            android:fontFamily="@font/amaranth"
+            android:hint="Firma/Organizacja: "
+            android:inputType="text" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:orientation="horizontal">
+
+        <EditText
+            android:id="@+id/edit_message3"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="2dp"
+            android:layout_weight="1"
+            android:ems="10"
+            android:fontFamily="@font/amaranth"
+            android:hint="Ulica/Numer: "
+            android:inputType="text" />
+
+        <EditText
+            android:id="@+id/edit_message4"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="2dp"
+            android:layout_weight="1"
+            android:ems="10"
+            android:fontFamily="@font/amaranth"
+            android:hint="Kod pocztowy: "
+            android:inputType="text" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:orientation="horizontal">
+
+        <EditText
+            android:id="@+id/edit_message5"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="2dp"
+            android:layout_weight="1"
+            android:ems="10"
+            android:fontFamily="@font/amaranth"
+            android:hint="Miasto: "
+            android:inputType="text" />
+
+        <EditText
+            android:id="@+id/edit_message6"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="2dp"
+            android:layout_weight="1"
+            android:ems="10"
+            android:fontFamily="@font/amaranth"
+            android:hint="Numer telefonu: "
+            android:inputType="phone" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:orientation="horizontal">
+
+        <EditText
+            android:id="@+id/edit_message7"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="2dp"
+            android:layout_weight="1"
+            android:ems="10"
+            android:fontFamily="@font/amaranth"
+            android:hint="PESEL:"
+            android:inputType="number" />
+    </LinearLayout>
+
+    <Button
+        android:id="@+id/button"
+        style="@style/PrimaryColoredButton"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="10dp"
+        android:background="@color/peach"
+        android:fontFamily="@font/amaranth"
+        android:text="Zapisz dane na tagu" />
+
+    <Button
+        android:id="@+id/new_intent_button"
+        style="@style/PrimaryColoredButton"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="10dp"
+        android:background="@color/peach"
+        android:fontFamily="@font/amaranth"
+        android:onClick="zmien"
+        android:text="Dodaj parametry dializy" />
+
+    <TextView
+        android:id="@+id/nfc_contents"
+        android:layout_width="match_parent"
+        android:layout_height="200dp"
+        android:layout_margin="2dp"
+        android:fontFamily="@font/amaranth" />
+
+</LinearLayout>

@@ -1,0 +1,11 @@
+PESEL: 12345678912,
+Imie: Marek, 
+Nazwisko: Kowalski
+Dializa{
+dataDializy=2019-06-19, 
+wagaPacjenta=62.0, 
+heparynizacja=12.02, 
+Ca=0.3, 
+K=0.22, 
+Na=0.21, 
+rodzajDializatora=cewkowy}

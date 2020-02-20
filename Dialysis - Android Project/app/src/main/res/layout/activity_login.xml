@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="@drawable/med"
+    tools:context=".loginActivity">
+
+    <EditText
+        android:id="@+id/login"
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        android:layout_margin="20dp"
+        android:ems="10"
+        android:hint="Wprowadź login:"
+        android:fontFamily="@font/amaranth"
+        android:inputType="textPersonName" />
+
+    <EditText
+        android:id="@+id/password"
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        android:layout_margin="20dp"
+        android:ems="10"
+        android:hint="Wprowadź hasło:"
+        android:fontFamily="@font/amaranth"
+        android:inputType="textPassword" />
+
+    <Button
+        android:id="@+id/loginBtn"
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        android:layout_margin="20dp"
+        android:background="@color/peach"
+        android:fontFamily="@font/amaranth"
+        style="@style/PrimaryColoredButton"
+        android:text="Zaloguj" />
+
+    <Button
+        android:id="@+id/returnBtn"
+        style="@style/PrimaryColoredButton"
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        android:layout_margin="20dp"
+        android:background="@color/peach"
+        android:fontFamily="@font/amaranth"
+        android:onClick="powrot"
+        android:text="Powrót" />
+</LinearLayout>
